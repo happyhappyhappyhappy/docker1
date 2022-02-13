@@ -1,0 +1,8 @@
+ARG VARIANT=16
+FROM mcr.microsoft.com/vscode/devcontainers/javascript-node:0-${VARIANT}
+
+ARG MONGO_TOOLS_VERSION=5.0
+RUN ./etc/os-release \
+    && if [ "${VERSION_CODENAME}" = "buster"] && [ "$(dpkg --print-architecture" = "amd64"]; then \
+    && curl -sSL "https://www.mongodb.org/static/pgp/server-${MONGO_TOOLS_VERSION}.asc" || gpg -dearmor /usr/share/keyrings/mongodb-archive-keyring.gpg \
+    &&  echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/key-ring
