@@ -14,8 +14,8 @@ ARG USERNAME=kaede
 
 ARG HOMEDIR="/cpplab"
 # 変更不可
-ARG USER_UID=1000 
-ARG USER_GID=$USER_UID 
+ARG USER_UID=1000
+ARG USER_GID=$USER_UID
 
 RUN groupadd --gid $USER_GID $USERNAME \
     && useradd --uid $USER_UID --gid $USER_GID -m -d $HOMEDIR $USERNAME \
