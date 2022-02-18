@@ -11,6 +11,4 @@ RUN groupadd --gid ${USER_GID} ${USERNAME} \
 && apt install -y sudo git bash zsh \
 && echo ${USERNAME} ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/${USERNAME} \
 && chmod 0440 /etc/sudoers.d/${USERNAME} \
-&& chsh -s /bin/zsh $U{USERNAME}
-
-USER ${USERNAME}
+&& chsh -s /bin/zsh ${USERNAME}
