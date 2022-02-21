@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  app:
+  appt2:
     build: 
       context: .
       dockerfile: Dockerfile
@@ -9,17 +9,10 @@ services:
         # Update 'VARIANT' to pick an LTS version of Node.js: 16, 14, 12.
         # Append -bullseye or -buster to pin to an OS version.
         # Use -bullseye variants on local arm64/Apple Silicon.
-        VARIANT: 16
-    ports:
-      - "11071:11071"
-    image: kayanode1i
-    container_name: kayanode1c
-    init: true
-    hostname: kayanode1
+        VARIANT: 14-buster
     volumes:
-      - /home/sakura/labos/nodejsmongodb:/labo:cached
-    tty: true
-    stdin_open: true
+      - /home/sakura/labos/nodetest:/labo:cached
+
     # Overrides default command so things don't shut down after the process ends.
     command: sleep infinity
 
