@@ -1,0 +1,10 @@
+{
+	"name": "cppkaede",
+	"dockerComposeFile": [
+		"../docker-compose.yml"
+	],
+	"service": "cpp-kaede",
+	"workspaceFolder": "/cpplab",
+	"settings": {},
+	"extensions": []
+}
