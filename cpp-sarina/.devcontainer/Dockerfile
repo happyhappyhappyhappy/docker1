@@ -21,9 +21,10 @@ RUN groupadd --gid $USER_GID $USERNAME \
     && useradd --uid $USER_UID --gid $USER_GID -m -d $HOMEDIR $USERNAME \
     #
     # [Optional] Add sudo support. Omit if you don't need to install software after connecting.
+    # tzdataはインストールしちゃダメ。途中で自分の場所を聞かれるので
     && apt update \
     && apt upgrade -y \
-    && apt install -y sudo bash git tzdata \
+    && apt install -y sudo bash git \
     && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
     && chmod 0440 /etc/sudoers.d/$USERNAME \
     && chsh -s bash $USERNAME

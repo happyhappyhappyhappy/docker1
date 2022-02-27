@@ -5,11 +5,14 @@ services:
     build:
       context: .
       dockerfile: ./.devcontainer/Dockerfile
-    image: cpp-kaede-i
+    volumes:
+      - /home/sakura/labos/cpplab:/labo:cached
+    image: cpp-sarina-i
     init: true
-    container_name: cpp-kaede-c
-    hostname: cppkaede
+    container_name: cpp-sarina-c
+    hostname: sarina
     stdin_open: true
     tty: true
+
     # user: yamanaka試しにテスト 2021/04/03 →中止
 
